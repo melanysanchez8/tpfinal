@@ -83,11 +83,23 @@ function draw() {
     text("En Pildover, Victor crea un Cristal que amplifica el poder Hextech", width / 2, 30);
 
   } else if (imagenahora === 1) {
+    noStroke();
+    fill(0, 0, 0, 200);
+    rect(width / 2 - 530 / 2, 25 - 40 / 2, 530, 40);
     textSize(20);
     fill(255);
     text("Elegir Personaje con el que quieras continuar la Historia", width / 2, 30);
+
+    fill(0, 0, 0, 200);
+    rect(width / 4 - 100 / 2, height - 45 - 40 / 2, 100, 40);
     textSize(22);
+    fill(255);
     text("Jinx", width / 4, height - 40);
+
+    fill(0, 0, 0, 200);
+    rect((3 * width) / 4 - 100 / 2, height - 45 - 40 / 2, 100, 40);
+    textSize(22);
+    fill(255);    
     text("Vi", (3 * width) / 4, height - 40);
 
   } else if (imagenahora === 3) {
@@ -101,25 +113,29 @@ function draw() {
     fill(0);
     text("Jinx roba el cristal?", width / 2, height - 120);
     textSize(22);
-    fill(255);
     text("NO", 110, height - 55);
     text("SI", width - 110, height - 55);
     
 
   } else if (imagenahora === 12) {
+    noStroke();
+    fill(0, 0, 0, 200);
+    rect(width - 590 - 20, 25, 600, 40); 
     textAlign(RIGHT, TOP);
     textSize(20);
-    fill(0);
+    fill(255);
     text("Jinx lanza el cristal. El cual explota y destruye todo Pildover", width - 20, 40);
     textAlign(CENTER);
     textSize(22);
-    fill(255);
     text("FIN", width / 2, height - 50);
 
   } else if (imagenahora === 5) {
     textAlign(LEFT, BOTTOM);
+    noStroke();
+    fill(0, 0, 0, 200);
+    rect(15, height - 45, 360, 40);
     textSize(20);
-    fill(0);
+    fill(255);
     text("Usa el cristal para amplificar su arma", 20, height - 20);
 
   } else if (imagenahora === 6) {
@@ -141,7 +157,7 @@ function draw() {
   } else if (imagenahora === 9) {
     textAlign(RIGHT, TOP);
     textSize(18);
-    text("Gracias a sus palabras, logra convencer a Jinx y se abrazan", width - 20, 30);
+    text("Gracias a sus palabras, logra convencer a Jinx y se abrazan.", width - 20, 30);
     textAlign(CENTER);
     textSize(22);
     text("FIN", width / 2, height - 50);
@@ -165,12 +181,11 @@ function draw() {
   } else if (imagenahora === 13) {
     textAlign(CENTER, TOP);
     text("Vi llega a pildover y encuentra a Jinx junto al cristal", width / 2, 30);
-    // texto dentro del cristal
+
     textAlign(CENTER, CENTER);
     textSize(18);
     text("Va hacia el cristal ->", width / 2, height / 2 - 30);
 
-    // texto abajo a la izquierda
     textAlign(LEFT, TOP);
     textSize(18);
     text("Va hacia Jinx\n¿qué va a hacer?", 40, height - 130, 300);
@@ -181,30 +196,46 @@ function draw() {
     text("Vi se abalanza bruscamente hacia el Cristal", width - 20, height - 20);
 
   } else if (imagenahora === 18) {
+    noStroke();
+    fill(0, 0, 0, 200);
+    rect(width - 380 - 20, 20, 390, 90);
     textAlign(RIGHT, TOP);
-    fill(0);
+    fill(255);
+    textSize(20);
     text("Al agarrar el cristal, no puede romperlo\ncon sus guantes y este explota\ndestruyendo todo Pildover", width - 20, 30);
     textAlign(CENTER);
+    fill(0);
     textSize(22);
     text("FIN", width / 2, height - 50);
 
   } else if (imagenahora === 14) {
-    textAlign(CENTER, TOP);
     textSize(20);
+    fill(0, 0, 0, 200);
+    rect(width / 2 - 460 / 2, 20, 460, 60);
+    fill(255);
+    textAlign(CENTER, TOP);
     text("Vi se acerca lentamente,\nquedando frente a frente con Jinx y el Cristal", width / 2, 30);
-    // texto dentro del diamante
+    
+    fill(0, 0, 0, 200);
+    rect(width / 2 - 210 / 2, height / 2 - 40, 210, 40);
+    fill(255);
     textAlign(CENTER, CENTER);
-    fill(0);
     text("¿Ir hacia el Cristal?", width / 2, height / 2 - 20);
 
-    // texto abajo a la izquierda
+    fill(0, 0, 0, 200);
+    rect(35, height - 140, 150, 40);
+    fill(255);
     textAlign(LEFT, TOP);
-    fill(0);
     text("¿Ir hacia Jinx?", 40, height - 130);
 
   } else if (imagenahora === 16) {
+    noStroke();
+    fill(0, 0, 0, 200);
+    rect(width - 550 - 20, 20, 560, 40);
+
     textAlign(RIGHT, TOP);
     fill(255);
+    textSize(20);
     text("Vi agarra el cristal y lo destruye con sus guantes Hextech", width - 20, 30);
     textAlign(CENTER);
     textSize(22);
@@ -217,7 +248,6 @@ function draw() {
 
   } 
 
-  // Dibujos (diamantes y botones)
   noFill();
   stroke(0);
   if (imagenahora === 0) { 
@@ -254,7 +284,6 @@ function draw() {
   }
 }
 
-// MOUSE Y TECLAS IGUAL QUE TU CÓDIGO ORIGINAL
 function mousePressed() {
   if (imagenahora === 0) {
     if (dentro(mouseX - width/2, mouseY - height/2, poly)) imagenahora = 1;
@@ -313,5 +342,4 @@ function dentro(x, y, diamante) {
 function dentro2(x, y, rectax, rectay, rectaw, rectah) {
   return x >= rectax && x <= rectax + rectaw && y >= rectay && y <= rectay + rectah;
 }
-
 
